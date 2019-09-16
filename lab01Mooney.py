@@ -1,6 +1,18 @@
 #Brett Mooney
 import math
 
+def printFunction(totalCost, totalPayment, changeQuarters, changeDimes, changeNickles, changePennies, totalNumCoins, changeValue):
+    print("Total cost of items: " + str(totalCost))
+    print("Total money given:: " + str(totalPayment))
+    print("Your change is as follows: ")
+    print("Quarters: " + str(math.floor(changeQuarters)))
+    print("Dimes: " + str(math.floor(changeDimes)))
+    print("Nickles: " + str(math.floor(changeNickles)))
+    print("Pennies: " + str(math.floor(changePennies)))
+    print("Total number of coins: " + str(totalNumCoins))
+    print("Total value of change: " + str(math.floor(changeValue)))
+
+
 changeQuarters = 0
 changeDimes = 0
 changeNickles = 0
@@ -68,15 +80,7 @@ while programRunning == 1:
 
 
           #Print output
-          print("Total cost of items: " + str(totalCost))
-          print("Total money given:: " + str(totalPayment))
-          print("Your change is as follows: ")
-          print("Quarters: " + str(math.floor(changeQuarters)))
-          print("Dimes: " + str(math.floor(changeDimes)))
-          print("Nickles: " + str(math.floor(changeNickles)))
-          print("Pennies: " + str(math.floor(changePennies)))
-          print("Total number of coins: " + str(totalNumCoins))
-          print("Total value of change: " + str(math.floor(changeValue)))
+          printFunction(totalCost, totalPayment, changeQuarters, changeDimes, changeNickles, changePennies, totalNumCoins, changeValue)
 
 
           while restartLoop == 1:
