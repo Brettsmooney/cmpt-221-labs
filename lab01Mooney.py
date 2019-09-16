@@ -1,6 +1,7 @@
 #Brett Mooney
 import math
 
+#Print Output function
 def printFunction(totalCost, totalPayment, changeQuarters, changeDimes, changeNickles, changePennies, totalNumCoins, changeValue):
     print("Total cost of items: " + str(totalCost))
     print("Total money given:: " + str(totalPayment))
@@ -12,7 +13,7 @@ def printFunction(totalCost, totalPayment, changeQuarters, changeDimes, changeNi
     print("Total number of coins: " + str(totalNumCoins))
     print("Total value of change: " + str(math.floor(changeValue)))
 
-
+#Variable Initialization
 changeQuarters = 0
 changeDimes = 0
 changeNickles = 0
@@ -33,7 +34,8 @@ while programRunning == 1:
   while itemCostInputRunning == 1:
     print("Total Cost of Items: ")#request transaction
     totalCost = input()
-
+    #input() always returns a string
+    #Try converting input into float, if error returns, re-run loop
     try:
       totalCost = float(totalCost)
       if float(totalCost) <= 0.00 :
@@ -50,7 +52,8 @@ while programRunning == 1:
     while paymentInputRunning == 1:
       print("Total amount of money given: ")#request payment
       totalPayment = input()
-
+      #input() always returns a string
+      #Try converting input into float, if error returns, re-run loop
       try:
         totalPayment = float(totalPayment)
         if float(totalPayment) < totalCost :
@@ -59,7 +62,7 @@ while programRunning == 1:
           print("No change, Transaction complete")
           transactionRunning = 0 #escape while loop
           paymentInputRunning = 0
-        else:
+        else: #If change is to be returned, calculate change, divide into coins
           transactionRunning = 0 #escape while loop
           paymentInputRunning = 0
           totalChange = totalPayment - totalCost #calculate change
@@ -75,14 +78,14 @@ while programRunning == 1:
           changeNickles = totalChange / 5   #(4 / 5 = 0 = changeNickles)
           totalChange = totalChange % 5     #(4 % 5 = 4 = totalChange)
           changePennies = totalChange       #(4 / 1 = 4 = changePennies)
-
+          #add up total number of coins
           totalNumCoins = math.floor(changeQuarters) + math.floor(changeDimes) + math.floor(changeNickles) + math.floor(changePennies)
 
 
           #Print output
           printFunction(totalCost, totalPayment, changeQuarters, changeDimes, changeNickles, changePennies, totalNumCoins, changeValue)
 
-
+          #prompt user for another transaction, if yes, repeat programRunning while loop
           while restartLoop == 1:
             print("Calculate another change value? [Y/n]: ")
             restart = input()
