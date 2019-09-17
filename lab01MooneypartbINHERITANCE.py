@@ -10,7 +10,7 @@ class Vehicle:
     def printVehicleInfo(self):
         print("ModelID: " + self.modelIdentification)
         print("Fuel: " + str(self.fuelCapCurr) + "/" + str(self.fuelCapMax))
-        print("Mileage" + str(self.currMilesDriven))
+        print("Mileage: " + str(self.currMilesDriven))
         print("Miles Per Gallon: " + str(self.milesPerGallon))
 
     def getCurrFuel(self):
@@ -23,7 +23,7 @@ class Vehicle:
     def setVehicleMileage(self, newVM):
         self.currMilesDriven = newVM
     def addVehicleMileage(self, addMiles):
-        self.VehicleMilage += addMiles
+        self.currMilesDriven += addMiles
 
     def getVehicleMPG(self):
         return self.milesPerGallon
@@ -38,8 +38,11 @@ class Vehicle:
             self.fuelCapCurr -= (tripDistance / self.milesPerGallon)
             #add the miles driven to the odometer
             self.addVehicleMileage(tripDistance) #add miles to odometer
+            print("Trip Completed.")
+            print(" ")
         else:
             print("Not enough fuel to complete the trip")
+            print(" ")
 
 
 
@@ -61,7 +64,14 @@ class UtilityVehicle(Vehicle):
     def setVehicleType(self, vtype):
         self.vehicleType = vtype
 
-testVehicle = Vehicle("chewy000367", 200, 200, 10)
+testVehicle = Vehicle("chewy000367", 200, 200, 50000, 10)
+testVehicle.printVehicleInfo()
+
+
+print("How many miles to drive? ")
+milesToDrive = input()
+
+testVehicle.drive(int(milesToDrive))
 testVehicle.printVehicleInfo()
 
 
