@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="eng" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>index page</title>
+
+    <style>
+      body{
+        background-color: lightgrey;
+      }
+      div.s {
+        border: 5px solid;
+        padding: 20px;
+        border-color: white;
+        border-radius: 5px;
+        height: 700px;
+      }
+      section.r {
+        float: right;
+        background-color: #ffb9b0;
+      }
+  </style>
+  </head>
+  <body>
+    <h1><center>Hello!</center></h1>
+    <h3>My name is Brett Mooney. I am currently studying <b>computer science</b>
+       with a concentration in <i>software design.</i></h3>
+    <h4>I try to live life apart from the norm so I always have fun stories to tell when I'm older.</h4>
+    <br>
+    <section class=r>
+    <div class=s>
+        <a href="/resume"><img src="{{url_for('static', filename='img/self.png')}}" alt="Self" style="float:right;width:500px;height:700px;">
+        </a>
+    </div>
+    </section>
+    <div>
+
+    </div>
+  </body>
+</html>
